@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APICalling</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-300 flex items-center h-screen justify-center">
+    <div class="bg-gray-500 p-4 rounded-md border-slate-600 max-w-md mx-auto">
+      <h1 class="text-2xl font-bold text-center">API Demo</h1>
+      <p class="text-gray-800 my-10 text-center text-2xl" id="jokeDisplay">
+        jokes will be here!!!
+      </p>
+      <p class="text-gray-800 my-10 text-center text-2xl" id="quoteDisplay">
+        quotes will be here!!!
+      </p>
+      <button
+        class="bg-blue-500 text-white rounded px-4 py-2 rounded-md w-full text sm"
+        id="getRandomJokeButton"
+      >
+        Get Random jokes
+      </button>
+      <button
+        class="bg-blue-500 text-white rounded px-4 py-2 rounded-md w-full text sm mt-2"
+        id="getRandomquoteButton"
+      >
+        quotes
+      </button>
+    </div>
+    <script>
+      let getRandomJokeButtonElement = document.getElementById(
+        "getRandomJokeButton"
+      );
+
+      let getRandomquoteButtonElement = document.getElementById(
+        "getRandomquoteButton"
+      );
+
+      let jokeDisplayElement = document.getElementById("jokeDisplay");
+      const getRandomJoke = () => {
+        let apiResponse = fetch(
+          "https://api.freeapi.app/api/v1/public/randomjokes/joke/random"
+        );
+        let quoteDisplayElement = document.getElementById("quoteDisplay");
+
+        console.log(apiResponse);
+
+        apiResponse
+          .then((response) => {
+            return response.json();
+          })
+          .then((jsonData) => {
+            console.log(jsonData.data.content);
+            jokeDisplayElement.innerText = jsonData.data.content;
+            quoteDisplayElement.innerText = jsonData.data.content;
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
+      getRandomJokeButtonElement.addEventListener("click", getRandomJoke);
+
+      const RandomQuotes = () => {
+        let apiResponse = fetch(
+          "https://api.freeapi.app/api/v1/public/quotes/quote/random"
+        );
+        let quoteDisplayElement = document.getElementById("quoteDisplay");
+        console.log(apiResponse);
+
+        apiResponse
+          .then((response) => {
+            return response.json();
+          })
+          .then((jsonData) => {
+            console.log(jsonData.data.content);
+            quoteDisplayElement.innerText = jsonData.data.content;
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
+      getRandomquoteButtonElement.addEventListener("click", RandomQuotes);
+    </script>
+  </body>
+</html>

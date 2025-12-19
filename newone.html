@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewOne</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gray-200">
+
+    <div class="flex justify-center mt-20">
+        <div class="w-[640px] bg-white p-6 rounded-lg shadow-md">
+
+            <!-- TOP: IMAGE + INFO (SIDE BY SIDE) -->
+            <div class="flex gap-4">
+
+                <!-- IMAGE SECTION -->
+                <div class="flex flex-col items-center">
+                    <img id="imageCat" src="https://cdn2.thecatapi.com/images/Qtncp2nRe.jpg" alt="Korat Cat" class="w-48 h-48 object-cover rounded-lg shadow-lg
+                   grayscale brightness-105 contrast-110 saturate-75" />
+
+                    <!-- Blue Block under image -->
+
+                </div>
+
+                <!-- INFO SECTION -->
+                <div class="flex-1">
+                    <div class="flex items-center gap-2">
+                        <h2 class="font-bold text-lg">Cat Name</h2>
+                        <span class="bg-purple-100 rounded-full text-purple-500 px-2 py-1 text-xs">
+                            country name
+                        </span>
+                    </div>
+
+                    <p class="text-sm my-4 text-gray-600">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Repellat perspiciatis praesentium quos nam facere recusandae,
+                        magni dolores est eaque, reiciendis illum.
+                    </p>
+
+                    <!-- TAGS -->
+                    <div class="flex flex-wrap gap-2 text-xs mb-3">
+                        <span class="bg-purple-100 rounded-full text-purple-500 px-2 py-1">Active</span>
+                        <span class="bg-purple-100 rounded-full text-purple-500 px-2 py-1">Loyal</span>
+                        <span class="bg-purple-100 rounded-full text-purple-500 px-2 py-1">Highly Intelligent</span>
+                        <span class="bg-purple-100 rounded-full text-purple-500 px-2 py-1">Expressive</span>
+                        <span class="bg-purple-100 rounded-full text-purple-500 px-2 py-1">Trainable</span>
+                    </div>
+
+                    <!-- STATS -->
+                    <div class="flex gap-6 text-sm text-gray-700 mb-2">
+                        <span>⚖️ 3–5 kg</span>
+                        <span>⏳ 10–15 years</span>
+                    </div>
+
+                    <!-- LINKS -->
+                    <div class="flex gap-4 text-sm text-blue-600 font-medium">
+                        <a href="#wikipedia" class="hover:underline">Wikipedia</a>
+                        <a href="#CFA" class="hover:underline">CFA</a>
+                        <a href="#VCN" class="hover:underline">VCN-Hospitals</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOTTOM: CHARACTERISTICS -->
+            <div class="mt-8 bg-orange-200 rounded-lg p-6">
+                <h3 class="font-semibold text-lg mb-4">Characteristics</h3>
+
+                <div class="space-y-3">
+                    <div>
+                        <div class="flex justify-between text-sm">
+                            <span>Adaptability</span><span>5/5</span>
+                        </div>
+                        <div class="h-2 bg-gray-300 rounded">
+                            <div class="h-2 bg-blue-600 rounded w-full"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-sm">
+                            <span>Energy Level</span><span>3/5</span>
+                        </div>
+                        <div class="h-2 bg-gray-300 rounded">
+                            <div class="h-2 bg-blue-600 rounded w-3/5"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-sm">
+                            <span>Affection Level</span><span>4/5</span>
+                        </div>
+                        <div class="h-2 bg-gray-300 rounded">
+                            <div class="h-2 bg-blue-600 rounded w-4/5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

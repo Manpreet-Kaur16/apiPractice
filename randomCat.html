@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RandomCat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 p-6">
+    <div
+      class="max-w-4xl mx-auto bg-white rounded-xl shadow-md"
+    >
+      <div class="flex">
+        
+          <p class="text-gray-800 my-10 text-center w-1/3" id="catDisplay">
+          Description
+        </p>
+        
+        <div class="w-2/3 p-6">
+          <div
+            class="w-1/3 bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center"
+          >
+            <img id="cat" class="rounded-lg w-48 h-48 object-cover shadow-lg" />
+            
+          </div>
+           
+        </div>
+        
+         
+
+          <div class="w-2/3 p-6">
+            <h2 class="text-3xl font-bold flex items-center gap-2">
+              Cat
+              <span
+                class="text-xs bg-sky-200 text-blue-700 px-2 py-1 rounded-md"
+              >
+                country
+              </span>
+            </h2>
+             <p class="text-gray-800 my-10 text-sm" id="description">
+              Description
+            </p>
+          </div>
+                
+            <button
+              class="bg-red-300 text-white rounded-md py-2 mx-auto"
+              id="clickButton"
+            >
+              Click to see more katty
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let clickButtonElement = document.getElementById("clickButton");
+      let catDisplayElement = document.getElementById("catDisplay");
+      let catElement = document.getElementById("cat");
+
+      const getRandomCats = () => {
+        let apiResponse = fetch(
+          "https://api.freeapi.app/api/v1/public/cats/cat/random"
+        );
+        console.log(apiResponse);
+
+        apiResponse
+          .then((response) => {
+            return response.json();
+          })
+          .then((jsonData) => {
+            catDisplayElement.innerText = jsonData.data.name;
+            catDisplayElement.innerText = jsonData.data.description;
+            catElement.src = jsonData.data.image;
+            console.log(jsonData);
+          });
+      };
+
+      clickButtonElement.addEventListener("click", getRandomCats);
+    </script>
+  </body>
+</html>
